@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body onload="playGreeting()">
+
+<h1>🙏 Namaskar</h1>
+
+{% if guest %}
+<h2>Welcome {{ guest }}</h2>
+{% else %}
+<h2>Welcome to ABC College</h2>
+{% endif %}
+
+<p>Select a department</p>
+
+<div id="buttons"></div>
+
+<audio id="audio" src="/static/audio/welcome.mp3"></audio>
+
+<script>
+function playGreeting() {
+  document.getElementById("audio").play();
+
+  fetch("/departments")
+    .then(res => res.json())
+    .then(data => {
+      let div = document.getElementById("buttons");
+      for (let d in data) {
+        div.innerHTML += `<a href="/department/${d}">
+          <button>${d}</button></a>`;
+      }
+    });
+}
+</script>
+
+</body>
+</html>
