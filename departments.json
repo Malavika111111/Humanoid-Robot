@@ -1,0 +1,12 @@
+{
+  "CSE": {
+    "route": "Go straight, turn left, Block A, First Floor",
+    "map": "cse.png",
+    "audio": "cse.mp3"
+  },
+  "ECE": {
+    "route": "Go straight, turn right, Block B",
+    "map": "ece.png",
+    "audio": "ece.mp3"
+  }
+}
