@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ name }} Department</title>
+</head>
+<body onload="playAudio()">
+
+<h1>{{ name }} Department</h1>
+<p>{{ dept.route }}</p>
+
+<img src="/static/maps/{{ dept.map }}" width="400">
+
+<audio id="audio" src="/static/audio/{{ dept.audio }}"></audio>
+
+<script>
+function playAudio() {
+  document.getElementById("audio").play();
+}
+</script>
+
+</body>
+</html>
